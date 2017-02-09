@@ -127,7 +127,7 @@ public class Main {
 
                 alumno = alumnos.get(numAlumno);
 
-                // Listado de asignaturas que está matriculado el alumno con iterador
+                // Listado de asignaturas que está matriculado el alumno con iterador!!yupii
                 Iterator<Asignatura> it = alumno.getAsignaturas().iterator();
                 while (it.hasNext()) {
                     Asignatura as = it.next();
@@ -140,12 +140,13 @@ public class Main {
                 System.out.println("Hasta otra...");
                 break;
 
-        }while (opcion != 6);
-
         }
+        while (opcion != 6) ;
+
+    }
 
 
 
 
     }
-}
+
