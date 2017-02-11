@@ -18,26 +18,26 @@ public class Main {
 
 
 
-        String opcion = null;
+        int opcion = 0;
 
         do {
-            System.out.println("a)Titular");
-            System.out.println("aa)Nuevo titular");
-            System.out.println("b)Cuenta bancaria");
-            System.out.println("bb) Nueva cuenta");
-            System.out.println("c) Nuevo apunte");
-            System.out.println("cc) Borrar cuenta");
-            System.out.println("d) Consultas");
-            System.out.println("dd) Dado un titular , saldo de todas las cuentas");
-            System.out.println("ddd)Dada una cuenta , titulares asociados");
-            System.out.println("e) Salir");
+            System.out.println("Titular");
+            System.out.println("1)Nuevo titular");
+            System.out.println("2)Cuenta bancaria");
+            System.out.println("Nueva cuenta");
+            System.out.println("3)Nuevo apunte");
+            System.out.println("4)Borrar cuenta");
+            System.out.println("Consultas");
+            System.out.println("6) Dado un titular , saldo de todas las cuentas");
+            System.out.println("7) Dada una cuenta , titulares asociados");
+            System.out.println("8) Salir");
 
             System.out.print("Elije: ");
-            opcion = br.readLine();
+            opcion = Integer.parseInt(br.readLine());
 
             switch (opcion){
 
-                case "aa":
+                case 1:
 
                     System.out.println("TITULAR");
                     System.out.println("..............");
@@ -61,7 +61,10 @@ public class Main {
 
                     break;
 
-                case "bb":
+                case 2:
+
+                    System.out.println("CUENTA BANCARIA");
+                    System.out.println("..............");
 
                     CuentaBancaria cb = new CuentaBancaria();
 

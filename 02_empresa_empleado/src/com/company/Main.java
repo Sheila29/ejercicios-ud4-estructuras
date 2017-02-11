@@ -13,6 +13,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List<Empresa> empresas = new LinkedList<>();
+
+
         int opcion;
 
         do{
@@ -31,59 +33,56 @@ public class Main {
 
                 case 1:
                     // Crear una nueva empresa
-
-
                     System.out.print("Nombre: ");
                     String nombre = br.readLine();
                     System.out.print("Año de fundación: ");
                     String anyofundacion = br.readLine();
 
-                    Empresa e = new Empresa(nombre, anyofundacion);
-
-                    empresas.add(e);
+                    Empresa emp= new Empresa(nombre, anyofundacion);
+                    empresas.add(emp);
 
                     break;
 
                 case 2:
 
-                    // Visualizar la empresas para que usuario elija
-                    if (empresas.size() > 1) {
-                        for (int i = 0; i < empresas.size(); i++) {
-                            System.out.println(empresas);
+                    // Añadir empleado a empresa ya existente
+                        for (int i = 0; i > empresas.size(); i++) {
+                            System.out.println((i + 1) + empresas.get(i).getNombre());
 
                         }
-                    }
+
+                        System.out.println("Elije empresa");
+                        int numEmpresa = Integer.parseInt(br.readLine());
+
+                        Empleado empleado = new Empleado();
+
+                        System.out.println("Nombre: ");
+                        empleado.setNombre(br.readLine());
+
+                        System.out.println("Apellidos: ");
+                        empleado.setApellidos(br.readLine());
+
+                        System.out.println("Fecha nacimiento: ");
+                        empleado.setFechaNacimiento(br.readLine());
+
+                        System.out.println("Contacto: ");
+                        empleado.setContacto(br.readLine());
 
 
+                        empresas.get(numEmpresa).añadirEmpleado(empleado);
 
 
-                    Empleado empleado = new Empleado();
-
-                    System.out.println("Nombre: ");
-                    empleado.setNombre(br.readLine());
-
-                    System.out.println("Apellidos: ");
-                    empleado.setApellidos(br.readLine());
-
-                    System.out.println("Fecha nacimiento: ");
-                    empleado.setFechaNacimiento(br.readLine());
-
-                    System.out.println("Contacto: ");
-                    empleado.setContacto(br.readLine());
-
-                    e.añadirEmpleado(empleado);
 
 
                     break;
 
                 case 3:
 
-                    if (empresas.size() > 0) {
                         //Listado de empresas.
                         for (Empresa empresa : empresas) {
                             System.out.println(empresa);
                         }
-                    }
+
 
                     break;
 
@@ -91,29 +90,23 @@ public class Main {
 
                     //Listado detallado de empresas y empleados
 
-                    if (empresas.size() > 0) {
-                        //Listado de empresas.
-                        for (Empresa empresa : empresas) {
-                            System.out.println(empresa);
-                        }
-                    }
+                        for (int i = 0; i < empresas.size(); i++) {
+                            System.out.println(i);
+                            for (int j = 0; j < empresas.get(i).getEmpleados().size(); j++) {
+                                System.out.println(j);
+                            }
 
-                    if(e.getEmpleados().size()> 0){
-                        // Listado empleados
-                        for (Empleado emple: e.getEmpleados()){
-                            System.out.println(emple);
                         }
 
-                    }
+
+                    
+
 
 
 
 
                     break;
 
-                case 5:
-
-                    break;
             }
 
 

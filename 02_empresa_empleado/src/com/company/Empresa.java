@@ -15,6 +15,9 @@ public class Empresa {
 
         private List<Empleado> empleados = new LinkedList<>();
 
+    public Empresa() {
+    }
+
     public Empresa(String nombre, String anyoFundacion) {
         this.nombre = nombre;
         this.anyoFundacion = anyoFundacion;
