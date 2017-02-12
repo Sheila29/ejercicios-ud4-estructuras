@@ -46,13 +46,15 @@ public class Main {
                 case 2:
 
                     // Añadir empleado a empresa ya existente
-                        for (int i = 0; i > empresas.size(); i++) {
-                            System.out.println((i + 1) + empresas.get(i).getNombre());
 
-                        }
+                    int numerar = 1;
+                    for (Empresa e : empresas){
+                        System.out.println(numerar+". "+e.getNombre());
+                        numerar++;
+                    }
 
                         System.out.println("Elije empresa");
-                        int numEmpresa = Integer.parseInt(br.readLine());
+                        int numEmpresa = Integer.parseInt(br.readLine())-1;
 
                         Empleado empleado = new Empleado();
 
