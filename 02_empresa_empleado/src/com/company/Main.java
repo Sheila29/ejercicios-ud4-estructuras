@@ -93,9 +93,9 @@ public class Main {
                     //Listado detallado de empresas y empleados
 
                         for (int i = 0; i < empresas.size(); i++) {
-                            System.out.println(i);
+                            System.out.println(empresas.get(i));
                             for (int j = 0; j < empresas.get(i).getEmpleados().size(); j++) {
-                                System.out.println(j);
+                                System.out.println(empresas.get(j));
                             }
 
                         }
