@@ -74,6 +74,8 @@ public class Main {
                 System.out.print("Nº de alumno: ");
                 int numAlumno = Integer.parseInt(br.readLine()) - 1;
 
+
+
                 // Mostrar todas las asignaturas
                 for (int i = 0; i < asignaturas.size(); i++) {
                     System.out.println((i + 1) + ". " + asignaturas.get(i));
@@ -86,7 +88,6 @@ public class Main {
 
                 alumno = alumnos.get(numAlumno); // alumnos en la posición numAlumno
                 asignatura = asignaturas.get(numAsignatura);
-
 
                 alumno.getAsignaturas().add(asignatura);
                 asignatura.getAlumnos().add(alumno);
@@ -127,7 +128,7 @@ public class Main {
 
                 alumno = alumnos.get(numAlumno);
 
-                // Listado de asignaturas que está matriculado el alumno con iterador!!yupii
+                // Listado de asignaturas que está matriculado el alumno con iterador
                 Iterator<Asignatura> it = alumno.getAsignaturas().iterator();
                 while (it.hasNext()) {
                     Asignatura as = it.next();

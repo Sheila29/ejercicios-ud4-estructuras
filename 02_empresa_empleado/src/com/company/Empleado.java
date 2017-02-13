@@ -8,7 +8,7 @@ public class Empleado {
     private String nombre;
     private String apellidos;
     private String fechaNacimiento;
-    private String contacto;
+    private String fechaContrato;
     private Empresa empresa;
 
 
@@ -39,21 +39,13 @@ public class Empleado {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public String getContacto() {
-        return contacto;
-    }
-
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
-    }
-
     @Override
     public String toString() {
         return "Empleado{" +
-                "Nombre: " + nombre + '\'' +
-                "Apellidos='" + apellidos + '\'' +
-                "FechaNacimiento='" + fechaNacimiento + '\'' +
-                "Contacto='" + contacto + '\'' +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", fechaNacimiento='" + fechaNacimiento + '\'' +
+                ", fechaContrato='" + fechaContrato + '\'' +
                 '}';
     }
 
@@ -63,5 +55,13 @@ public class Empleado {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public String getFechaContrato() {
+        return fechaContrato;
+    }
+
+    public void setFechaContrato(String fechaContrato) {
+        this.fechaContrato = fechaContrato;
     }
 }

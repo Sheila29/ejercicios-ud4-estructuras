@@ -47,19 +47,28 @@ public class Main {
 
                     // Añadir empleado a empresa ya existente
 
-                    int numerar = 1;
-                    for (Empresa e : empresas){
-                        System.out.println(numerar+". "+e.getNombre());
-                        numerar++;
+                    for (int i = 0; i < empresas.size(); i++) {
+                        System.out.println((i+1)+". "+empresas.get(i));
+
                     }
+
+
+
 
                         System.out.println("Elije empresa");
                         int numEmpresa = Integer.parseInt(br.readLine())-1;
 
                         Empleado empleado = new Empleado();
 
+
                         System.out.println("Nombre: ");
-                        empleado.setNombre(br.readLine());
+                        String nombre2 = br.readLine();
+
+                        if (nombre2.length() > 3) {
+                            empleado.setNombre(nombre2);
+                        }else{
+                            System.err.println("eso no es un nombre. ");
+                        }
 
                         System.out.println("Apellidos: ");
                         empleado.setApellidos(br.readLine());
@@ -67,8 +76,8 @@ public class Main {
                         System.out.println("Fecha nacimiento: ");
                         empleado.setFechaNacimiento(br.readLine());
 
-                        System.out.println("Contacto: ");
-                        empleado.setContacto(br.readLine());
+                        System.out.println("Fecha: ");
+                        empleado.setFechaContrato(br.readLine());
 
 
                         empresas.get(numEmpresa).añadirEmpleado(empleado);
@@ -92,13 +101,17 @@ public class Main {
 
                     //Listado detallado de empresas y empleados
 
-                        for (int i = 0; i < empresas.size(); i++) {
-                            System.out.println(empresas.get(i));
-                            for (int j = 0; j < empresas.get(i).getEmpleados().size(); j++) {
-                                System.out.println(empresas.get(j));
-                            }
+                    for (int i = 0; i < empresas.size(); i++) {
+                        System.out.println(empresas.get(i));
+
+                        for (int j = 0; j < empresas.get(i).getEmpleados().size(); j++) {
+                            System.out.println(empresas.get(i).getEmpleados().get(j).getNombre());
 
                         }
+                    }
+
+
+
 
 
                     
