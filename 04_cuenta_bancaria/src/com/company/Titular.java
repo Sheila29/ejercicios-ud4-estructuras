@@ -13,7 +13,7 @@ public class Titular {
     private String DNI;
     private String fechaAlta;
 
-
+    private List<CuentaBancaria> cuentas = new LinkedList<>();
 
     public String getNombre() {
         return nombre;

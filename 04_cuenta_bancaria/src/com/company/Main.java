@@ -3,6 +3,7 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,9 +16,6 @@ public class Main {
         List<Titular> titulares = new LinkedList<Titular>();
         List<CuentaBancaria> cuentas = new LinkedList<CuentaBancaria>();
 
-
-
-
         int opcion = 0;
 
         do {
@@ -28,9 +26,9 @@ public class Main {
             System.out.println("3)Nuevo apunte");
             System.out.println("4)Borrar cuenta");
             System.out.println("Consultas");
-            System.out.println("6) Dado un titular , saldo de todas las cuentas");
-            System.out.println("7) Dada una cuenta , titulares asociados");
-            System.out.println("8) Salir");
+            System.out.println("5) Dado un titular , saldo de todas las cuentas");
+            System.out.println("6) Dada una cuenta , titulares asociados");
+            System.out.println("7) Salir");
 
             System.out.print("Elije: ");
             opcion = Integer.parseInt(br.readLine());
@@ -82,25 +80,72 @@ public class Main {
 
                 break;
 
-                case "c":
+                case 3:
 
-                    CuentaBancaria cb2 = new CuentaBancaria();
+                    for (int i = 0; i < cuentas.size(); i++) {
+                        System.out.println((i + 1) + ". " +cuentas.get(i));
+                    }
 
-                    System.out.println(cb2.calcularSaldo());
+                    System.out.print("Elige una cuenta: ");
+                    int numCuenta = Integer.parseInt(br.readLine()) - 1;
 
-                    System.out.println("¿qué cantidad quieres ingresar?");
-                    int cantidad = Integer.parseInt(br.readLine());
-                    cb2.nuevoApunte(cantidad);
+                    // Generar el objeto
+                    Apunte apunte = new Apunte();
 
+                    System.out.print("Cantidad: ");
+                    double cantidad = Double.parseDouble(br.readLine());
 
-
-
-
+                    cuentas.get(numCuenta).nuevoApunte(cantidad);
 
 
 
 
                     break;
+
+                case 4:
+
+                    // Borrar cuenta
+
+
+                    for (int i = 0; i < cuentas.size(); i++) {
+                        System.out.println((i + 1) + ", " + cuentas.get(i));
+                    }
+
+                        System.out.println("Elije la cuenta que quieres borrar: ");
+                        int borrarnumCuenta = Integer.parseInt(br.readLine()) - 1;
+
+                        cuentas.remove(borrarnumCuenta);
+
+
+
+
+                    break;
+
+                case 5:
+
+                    //Dado un titular , saldo de todas las cuentas
+
+
+                    for (int i = 0; i < titulares.size() ; i++) {
+                        System.out.println((i+1)+". "+titulares.get(i));
+                    }
+
+                    System.out.println("Elije un titular: ");
+                    int numtitular = Integer.parseInt(br.readLine());
+
+
+
+
+
+                case 7:
+
+                    System.out.println("Has elegido salir....");
+
+
+
+
+                    break;
+
             }
 
 
@@ -108,7 +153,7 @@ public class Main {
 
 
 
-        }while(opcion.equalsIgnoreCase("4"));
+        }while(opcion != 7);
 
     }
 }

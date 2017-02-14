@@ -12,6 +12,8 @@ public class Apunte {
     private double cantidad;
     private Calendar fecha;
 
+    private CuentaBancaria cuentaBancaria;
+
     public double getCantidad() {
         return cantidad;
     }
@@ -27,5 +29,13 @@ public class Apunte {
 
     public void setFecha(Calendar fecha) {
         this.fecha = fecha;
+    }
+
+    public CuentaBancaria getCuentaBancaria() {
+        return cuentaBancaria;
+    }
+
+    public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
+        this.cuentaBancaria = cuentaBancaria;
     }
 }

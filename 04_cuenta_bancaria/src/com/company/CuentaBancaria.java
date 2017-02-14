@@ -52,6 +52,7 @@ public class CuentaBancaria {
         apunte.setFecha(cal);
 
         apuntes.add(apunte);
+        apunte.setCuentaBancaria(this);
 
 
 
