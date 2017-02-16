@@ -115,6 +115,7 @@ public class Main {
 
                 break;
 
+
             case 5:
 
                 // Mostrar todos los alumnos
@@ -134,6 +135,9 @@ public class Main {
                     Asignatura as = it.next();
                     System.out.println(as);
                 }
+
+                // total de horas
+                alumno.visualizarMatricula();
 
                 break;
 

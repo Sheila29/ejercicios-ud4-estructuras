@@ -14,6 +14,18 @@ public class Alumno {
 
     private List<Asignatura> asignaturas = new LinkedList<>();
 
+    public void visualizarMatricula(){
+
+        int total = 0;
+        System.out.println("datos matrícula: "+nombre);
+        for (Asignatura a: asignaturas){
+            System.out.println("nombre"+a.getNombre());
+            System.out.println("horas semanales"+a.getHorasSemanales());
+            total =+ a.getHorasSemanales();
+        }
+        System.out.println("total: "+total);
+    }
+
 
 
 
