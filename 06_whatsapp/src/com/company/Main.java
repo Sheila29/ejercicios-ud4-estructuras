@@ -17,8 +17,6 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        List<Contacto> contactos = new ArrayList<>();
-
 
 
         Map<String, Contacto> listado = new HashMap<>();
@@ -47,34 +45,40 @@ public class Main {
 
             switch(opcion){
 
-                case 1:
+                case 1: {
                     // Nuevo contacto
 
                     Contacto contacto = new Contacto();
 
-                    System.out.println("Nombre:");
-                    contacto.setNombre(br.readLine());
+                    System.out.print("Telefono: ");
+                    String telefono = br.readLine();
 
-                    System.out.println("Apellidos:");
-                    contacto.setApellidos(br.readLine());
+                    System.out.print("Nombre:");
+                    String nombre = br.readLine();
 
-                    System.out.println("Email: ");
-                    contacto.setEmail(br.readLine());
+                    System.out.print("Apellidos:");
+                    String apellidos = br.readLine();
 
-                    contactos.add(contacto);
+                    System.out.print("Email: ");
+                    String email = br.readLine();
 
+                    listado.put(telefono, new Contacto(nombre, apellidos, email));
+
+                }
 
                     break;
 
-                case 2:
+                case 2: {
 
 
-                    for (int i = 0; i < contactos.size(); i++) {
-                        System.out.println((i+1)+". "+contactos.get(i));
-                    }
+                    System.out.println("Escribe un teléfono: ");
+                    String telefono = br.readLine();
 
-                    System.out.println("Qué contacto quieres eliminar?");
-                    int contactoSeleccionado = Integer.parseInt(br.readLine());
+                    listado.remove(telefono);
+                }
+
+
+
 
 
                     break;
