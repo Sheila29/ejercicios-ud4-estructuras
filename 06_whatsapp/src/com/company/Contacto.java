@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by 7FPROG10 on 16/02/2017.
  */
@@ -8,6 +11,8 @@ public class Contacto {
     private String nombre;
     private String apellidos;
     private String email;
+
+    private Map<String, Contacto> listado = new HashMap<>();
 
 
 

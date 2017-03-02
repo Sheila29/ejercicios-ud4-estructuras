@@ -5,10 +5,7 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
 
@@ -20,6 +17,7 @@ public class Main {
 
 
         Map<String, Contacto> listado = new HashMap<>();
+
 
 
         int opcion = 0;
@@ -48,8 +46,6 @@ public class Main {
                 case 1: {
                     // Nuevo contacto
 
-                    Contacto contacto = new Contacto();
-
                     System.out.print("Telefono: ");
                     String telefono = br.readLine();
 
@@ -70,26 +66,74 @@ public class Main {
 
                 case 2: {
 
+                    // Eliminar contacto
 
-                    System.out.println("Escribe un teléfono: ");
+
+                    System.out.print("Escribe un teléfono: ");
                     String telefono = br.readLine();
 
                     listado.remove(telefono);
+
+
                 }
 
 
 
+                    break;
+
+
+
+
+                case 3: {
+
+                    System.out.println("Escribe un teléfono: ");
+                    String telefono = br.readLine();
+
+                    // Buscar contacto por número de teléfono
+
+
+
+
+
+
+
+                }
+                    break;
+
+                case 4:{
+
+
+                    // Buscar contacto por nombre
+
+
+                }
+                    break;
+                case 5:
+
+                    //Listado de todos los contactos, tal como se han añadido.
+
+                    listado.forEach((k,v) -> System.out.println("Teléfono: " + k + " " + v));
+
 
 
                     break;
 
-                case 3:
+                case 6:
 
-                    listado.put("654635353",new Contacto("Sheila", "Peña", "murgia85@gmail.com"));
+                    // Listado de todos los contactos, ordenados por número de teléfono.
 
-                    listado.get("646464")
+                    SortedSet<String> ordenados = new TreeSet<>();
+                    ordenados.addAll(listado.keySet());
+
+                    Iterator<String> it = ordenados.iterator();
+                    while(it.hasNext()){
+                        String list = it.next();
+                        System.out.println("Teléfono: " + list + " -> Contacto: " + listado.get(list));
+                    }
 
                     break;
+
+
 
             }
 
